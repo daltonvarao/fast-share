@@ -1,0 +1,17 @@
+{
+  "name": "fast-share",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon",
+    "start-browser-sync": "nodemon & browser-sync start --proxy 'localhost:3000' --files 'public, views'"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.9",
+    "pug": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}

@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  form#share(shareId=share._id)
+    input(name="title" placeholder="Title" value=share.title)
+    textarea(placeholder="Content" rows=20 name="content") #{share.content}

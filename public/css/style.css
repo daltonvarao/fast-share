@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+}
+
+#navigation a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#navigation a:hover {
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.shared-list li {
+  margin: 1rem .5rem;
+  padding: .5rem .25rem;
+  margin-bottom: .25rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#content {
+  padding: 0.75rem;
+}
+
+#content p {
+  margin-bottom: .5rem;
+}
+
+#content form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+input, textarea {
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  border-radius: .25rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+textarea {
+  height: calc(100vh - 10rem);
+}
+
+#navigation {
+  background-color: #333;
+  padding: 1.25rem 1rem;
+  color: #fff;
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navigation h3 {
+  margin-bottom: 0;
+}
+
+#navigation ul li {
+  float: left;
+  list-style: none;
+  margin-right: .5rem;
+  background-color: #fff;
+  padding: .5rem;
+}
+
+#navigation ul li a {
+  color: #333;
+}
+
+#navigation ul li:hover {
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+}
