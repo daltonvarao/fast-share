@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon",
-    "start-browser-sync": "nodemon & browser-sync start --proxy 'localhost:3000' --files 'public, views'"
+    "start": "node index.js",
+    "dev": "nodemon"
   },
   "dependencies": {
     "express": "^4.17.1",

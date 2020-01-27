@@ -9,7 +9,9 @@ const routes = require('./routes')
 const Share = require('./models/Share')
 const User = require('./models/User')
 
-mongoose.connect('mongodb://localhost:27017/fast-share', {
+const mongodbURI = process.env.MONGOURI || 'mongodb://localhost:27017/fast-share'
+
+mongoose.connect(mongodbURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -45,6 +47,6 @@ socketio.on("connection", (socket) => {
   })
 })
 
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000')
-})
+const port = process.env.PORT || 3000
+
+server.listen(port)
