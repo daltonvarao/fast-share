@@ -21,6 +21,11 @@ if (form) {
   })
 }
 
+function clearMessages() {
+  messages.classList.remove('mb-1')
+  messages.innerHTML = ''
+}
+
 const xhr = new XMLHttpRequest()
 
 shares.forEach(function(share) {
@@ -29,27 +34,28 @@ shares.forEach(function(share) {
 
     xhr.open('DELETE', `/shares/${share.id}`, true)
     xhr.onload = function() {
-      
       const data = JSON.parse(xhr.responseText)
       const messageContainer = document.createElement('p')
       const message = document.createElement('span')
       const closeBtn = document.createElement('button')
 
-      closeBtn.addEventListener('click', function() {
-        messages.classList.add('hidden')
-      })
-      
       message.innerHTML = data.message
       closeBtn.innerHTML = "&times;"
       closeBtn.classList.add('close')
-
+      
       messageContainer.appendChild(message)
       messageContainer.appendChild(closeBtn)
-
+      
       messageContainer.classList.add(data.success ? 'success' : 'error')
-
+      
+      clearMessages()
       messages.classList.add('mb-1')
+      messages.classList.remove('hidden')
       messages.appendChild(messageContainer)
+
+      closeBtn.addEventListener('click', clearMessages)
+
+      setTimeout(clearMessages, 5000)
     }
     xhr.send()
     share.classList.replace('share-item', 'hidden')
