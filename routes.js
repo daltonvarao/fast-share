@@ -38,6 +38,16 @@ routes.get('/shares', (req, res) => {
     })
 })
 
+routes.delete('/shares/:id', async (req, res) => {
+  Share.findByIdAndDelete(req.params.id)
+    .then(share => {
+      return res.json({success: true, message: 'Share deleted'})
+    })
+    .catch(error => {
+      return res.json({success: false, message: error})
+    })
+})
+
 routes.get('/auth/signup', (req, res) => {
   res.render('auth/index')
 })

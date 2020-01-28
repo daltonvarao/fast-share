@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const server = require('http').createServer(app)
 const socketio = require('socket.io').listen(server)
 const session = require('express-session')
+const cors = require('cors')
 
 const routes = require('./routes')
 const Share = require('./models/Share')
@@ -18,6 +19,7 @@ mongoose.connect(mongodbURI, {
 
 app.set('view engine', 'pug')
 
+app.use(cors())
 app.use(session({
   resave: true,
   saveUninitialized: true,
@@ -49,4 +51,8 @@ socketio.on("connection", (socket) => {
 
 const port = process.env.PORT || 3000
 
-server.listen(port)
+server.listen(port, () => {
+  if (process.env.NODE_ENV != 'production') {
+    console.log(`Listen at http://localhost:${port}`)
+  }
+})

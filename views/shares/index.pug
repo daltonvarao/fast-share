@@ -1,12 +1,16 @@
 extends ../layout
 
 block content
+  .messages 
   h2 Your Shared Documents
-  ul.shared-list
-    for share in shares
-      li
-        if share.title
-          a(href="/shares/" + share._id) #{share.title}
-        else
-          a(href="/shares/" + share._id) #{share._id}
-
+  if shares
+    ul.shared-list
+      for share in shares
+        li.share-item(id=share._id)
+          if share.title
+            a(href="/shares/" + share._id) #{share.title}
+          else
+            a(href="/shares/" + share._id) #{share._id}
+          button.share-delete delete
+  else
+    p No shares here yet.

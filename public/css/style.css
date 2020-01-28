@@ -9,13 +9,41 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
+.hidden {
+  display: none !important;
+}
+.messages {
+  font-weight: bold;
+  color: #fff;
+}
+
+.messages p.success {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(17, 173, 17);
+  align-items: center;
+  padding: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.messages p.error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(223, 54, 54);
+  padding: 1rem;
+}
+
 #navigation a {
   text-decoration: none;
   color: #fff;
 }
 
 #navigation a:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 a {
@@ -24,7 +52,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .shared-list li {
@@ -32,6 +60,40 @@ a:hover {
   padding: .5rem .25rem;
   margin-bottom: .25rem;
   border-bottom: 1px solid #ccc;
+}
+
+.close {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+}
+
+.close:hover {
+  opacity: .7;
+}
+
+.share-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.share-delete {
+  color: red;
+  background-color: transparent;
+  border: 0;
+  font-size: 12pt;
+  outline: none;
+}
+
+.share-delete:hover {
+  opacity: 0.6;
+}
+
+.share-open {
+  color: steelblue;
 }
 
 #content {
@@ -49,14 +111,14 @@ a:hover {
 }
 
 input, textarea {
-  border: solid 1px rgba(0, 0, 0, 0.2);
+  border: solid 1px rgba(0, 0, 0, 0.1);
   border-radius: .25rem;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 textarea {
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 11rem);
 }
 
 #navigation {
@@ -76,16 +138,38 @@ textarea {
 #navigation ul li {
   float: left;
   list-style: none;
-  margin-right: .5rem;
-  background-color: #fff;
-  padding: .5rem;
 }
 
 #navigation ul li a {
+  margin-right: .5rem;
+  padding: .5rem;
+  background-color: #fff;
   color: #333;
 }
 
-#navigation ul li:hover {
+#navigation ul li a:hover {
   color: #333;
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.error-title {
+  font-size: 50vh;
+}
+
+@media (max-width: 768px) {
+  .error-title {
+    font-size: 30vh;
+  }
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error-description {
+  font-size: 14pt;
+  text-align: center;
 }
