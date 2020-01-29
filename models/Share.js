@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const genRandomId = require('../utils/randomId')
+// const genRandomId = require('../utils/randomId')
 
 const ShareSchema = new mongoose.Schema({
   title: {
@@ -12,8 +12,19 @@ const ShareSchema = new mongoose.Schema({
   },
   urlID: {
     type: String,
-    default: function(){ genRandomId }
+    default: ''
   }
 })
+
+// ShareSchema.pre("save", function(next) {
+//   this.urlID = genRandomId()
+
+//   this.findOne({ urlID: this.urlID })
+//     .then(share => {
+//       console.log(share)
+//     })
+
+//     return next()
+// })
 
 module.exports = mongoose.model('Share', ShareSchema)

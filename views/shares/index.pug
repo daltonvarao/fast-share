@@ -8,9 +8,9 @@ block content
       for share in shares
         li.share-item(id=share._id)
           if share.title
-            a(href="/shares/" + share._id) #{share.title}
+            a(href="/shares/" + share.urlID) #{share.title}
           else
-            a(href="/shares/" + share._id) #{share._id}
+            a(href="/shares/" + share.urlID) #{share.urlID}
           button.share-delete delete
   else
     p No shares here yet.

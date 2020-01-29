@@ -9,7 +9,7 @@ const chars = [
 function genRandomId() {
   let code = ''
   for (let i = 0; i < 5; i++) {
-    let num = Math.floor(Math.random() * 62 + 1)
+    let num = Math.floor(Math.random() * (chars.length - 1))
     code += chars[num]
   }
   return code

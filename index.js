@@ -14,7 +14,8 @@ const mongodbURI = process.env.MONGOURI || 'mongodb://localhost:27017/fast-share
 
 mongoose.connect(mongodbURI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: true
 })
 
 app.set('view engine', 'pug')
