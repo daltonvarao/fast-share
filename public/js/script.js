@@ -9,6 +9,13 @@ shareCodeBtn.addEventListener('click', function() {
   form.sharelink.select()
   form.sharelink.setSelectionRange(0, form.sharelink.value.length)
   document.execCommand('copy')
+
+  this.innerHTML = 'copied'
+
+  setTimeout(function() {
+    shareCodeBtn.innerHTML = 'copy'
+    form.sharelink.blur()
+  }, 5000)
 })
 
 if (form) { 
