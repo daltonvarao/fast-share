@@ -134,10 +134,14 @@ textarea {
 .share-link-input {
   margin: 0;
   flex-grow: 1;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  outline: none;
+  border-right: 0;
 }
 
 .share-link-btn {
-
+  /* margin-left: 0.5rem; */
 }
 
 #share-code {
@@ -145,6 +149,7 @@ textarea {
   color: #fff;
   padding: .5rem;
   border: 0;
+  border: 1px solid #333;
   font-weight: bold;
 }
 
@@ -193,7 +198,7 @@ textarea {
   }
 
   textarea {
-    height: calc(100vh - 15rem);
+    height: calc(100vh - 16rem);
   }
 
   /* .share-link-container {
