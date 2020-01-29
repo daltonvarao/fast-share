@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const genRandomId = require('../utils/randomId')
 
 const ShareSchema = new mongoose.Schema({
   title: {
@@ -8,6 +9,10 @@ const ShareSchema = new mongoose.Schema({
   content: {
     type: String,
     default: ''
+  },
+  urlID: {
+    type: String,
+    default: function(){ genRandomId }
   }
 })
 
