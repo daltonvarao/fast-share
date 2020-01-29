@@ -6,6 +6,9 @@ let messages = document.querySelector('.messages')
 let shareCodeBtn = document.querySelector('#share-code')
 
 if (shareCodeBtn) { 
+
+  form.sharelink.value = window.location.href
+
   shareCodeBtn.addEventListener('click', function() {
     form.sharelink.select()
     form.sharelink.setSelectionRange(0, form.sharelink.value.length)
@@ -16,7 +19,7 @@ if (shareCodeBtn) {
     setTimeout(function() {
       shareCodeBtn.innerHTML = 'copy'
       form.sharelink.blur()
-    }, 5000)
+    }, 2000)
   })
 }
 
@@ -71,7 +74,7 @@ shares.forEach(function(share) {
 
       closeBtn.addEventListener('click', clearMessages)
 
-      setTimeout(clearMessages, 5000)
+      setTimeout(clearMessages, 3000)
     }
     xhr.send()
     share.classList.replace('share-item', 'hidden')

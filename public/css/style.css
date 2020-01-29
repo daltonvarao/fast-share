@@ -111,7 +111,6 @@ a:hover {
 #content form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
 }
 
 input, textarea {
@@ -123,6 +122,22 @@ input, textarea {
 
 textarea {
   height: calc(100vh - 15rem);
+}
+
+.share-link-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: stretch;
+}
+
+.share-link-input {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.share-link-btn {
+
 }
 
 #share-code {
@@ -176,8 +191,20 @@ textarea {
   .error-title {
     font-size: 30vh;
   }
+
   textarea {
     height: calc(100vh - 15rem);
+  }
+
+  /* .share-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .share-link-input {
+    margin-bottom: .5rem;
+    flex-grow: 0; */
   }
 }
 

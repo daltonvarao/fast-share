@@ -4,5 +4,6 @@ block content
   form#share(shareId=share._id)
     input(name="title" placeholder="Title" value=share.title)
     textarea(placeholder="Content" rows=20 name="content") #{share.content}
-    input(type="text" name="sharelink" value="http://fast-share.herokuapp.com/" + share.urlID)
-    button#share-code(type="button") copy
+    .share-link-container
+      input.share-link-input(type="text" name="sharelink" readonly)
+      button.share-link-btn#share-code(type="button") copy
