@@ -16,15 +16,5 @@ const ShareSchema = new mongoose.Schema({
   }
 })
 
-// ShareSchema.pre("save", function(next) {
-//   this.urlID = genRandomId()
-
-//   this.findOne({ urlID: this.urlID })
-//     .then(share => {
-//       console.log(share)
-//     })
-
-//     return next()
-// })
 
 module.exports = mongoose.model('Share', ShareSchema)

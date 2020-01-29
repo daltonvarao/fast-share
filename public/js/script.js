@@ -32,7 +32,7 @@ shares.forEach(function(share) {
   share.querySelector('button').addEventListener('click', function(){
     if (!confirm('Are you sure you want to delete this item?')) return;
 
-    xhr.open('DELETE', `/shares/${share._id}`, true)
+    xhr.open('DELETE', `/shares/${share.id}`, true)
     xhr.onload = function() {
       const data = JSON.parse(xhr.responseText)
       const messageContainer = document.createElement('p')
