@@ -47,8 +47,8 @@ routes.get('/shares', (req, res) => {
     })
 })
 
-routes.delete('/shares/:urlID', async (req, res) => {
-  Share.findOneAndRemove({urlID: req.params.urlID})
+routes.delete('/shares/:id', async (req, res) => {
+  Share.findByIdAndRemove(req.params.id)
     .then(share => {
       return res.json({success: true, message: 'Share deleted'})
     })
