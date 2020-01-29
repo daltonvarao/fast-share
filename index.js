@@ -6,7 +6,8 @@ const socketio = require('socket.io').listen(server)
 const session = require('express-session')
 const cors = require('cors')
 
-const routes = require('./routes')
+const shareRoutes = require('./routes/shareRoutes')
+const homeRoutes = require('./routes/homeRoutes')
 const Share = require('./models/Share')
 const User = require('./models/User')
 
@@ -29,7 +30,8 @@ app.use(session({
 
 app.use(express.static('public'))
 
-app.use(routes)
+app.use('/', homeRoutes)
+app.use('/shares', shareRoutes)
 
 app.use((req, res) => {
   res.status(404)
@@ -50,10 +52,4 @@ socketio.on("connection", (socket) => {
   })
 })
 
-const port = process.env.PORT || 3000
-
-server.listen(port, () => {
-  if (process.env.NODE_ENV != 'production') {
-    console.log(`Listen at http://localhost:${port}`)
-  }
-})
+module.exports = server

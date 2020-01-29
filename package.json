@@ -1,11 +1,11 @@
 {
   "name": "fast-share",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./bin/www",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.5",

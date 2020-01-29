@@ -3,3 +3,5 @@ block content
   .error-container
     h1.error-title 404
     p.error-description Something bad happens, the requested page doesn't exists.
+    if error
+      p #{error}
