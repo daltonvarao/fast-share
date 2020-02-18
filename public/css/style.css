@@ -129,6 +129,7 @@ textarea {
   flex-direction: row;
   align-items: center;
   align-content: stretch;
+  margin-bottom: .75rem;
 }
 
 .share-link-input {
@@ -142,6 +143,11 @@ textarea {
 
 .share-link-btn {
   /* margin-left: 0.5rem; */
+}
+
+.connected-people {
+  font-size: 10pt;
+  float: right;
 }
 
 #share-code {

@@ -12,6 +12,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.8.9",
+    "morgan": "^1.9.1",
     "pug": "^2.0.4",
     "socket.io": "^2.3.0"
   }

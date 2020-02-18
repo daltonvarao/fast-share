@@ -1,14 +1,14 @@
-let socket = io()
 
 let form = document.querySelector('#share')
 let shares = document.querySelectorAll('.share-item')
 let messages = document.querySelector('.messages')
 let shareCodeBtn = document.querySelector('#share-code')
+let connectedUsers = document.querySelector('.connected-number')
+
 
 if (shareCodeBtn) { 
-
   form.sharelink.value = window.location.href
-
+  
   shareCodeBtn.addEventListener('click', function() {
     form.sharelink.select()
     form.sharelink.setSelectionRange(0, form.sharelink.value.length)
@@ -23,7 +23,19 @@ if (shareCodeBtn) {
   })
 }
 
-if (form) { 
+if (form) {
+  let socket = io()
+
+  socket.on('connected-users', function({id, connectedNumber}) {
+    if (id == form.attributes['shareId'].value) {
+      if (connectedNumber == 2) {
+        connectedUsers.innerHTML = `${connectedNumber - 1} person and`
+      } else if (connectedNumber > 2) {
+        connectedUsers.innerHTML = `${connectedNumber - 1} people and`
+      }
+    }
+  })
+
   form.addEventListener('input', function(){
     socket.emit('change-share-content-to-backend', {
       content: this.content.value,
